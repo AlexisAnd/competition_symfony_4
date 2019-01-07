@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main role="main" class="container w-75">
+        <h2>Les groupes</h2>
+
+        <div>
+            <a href="{{ path('group_create_match') }}" class="btn btn-primary">Ajouter un match</a>
+        </div>
+                {{ include('admin/inc/groupA.html.twig') }}
+                {{ include('admin/inc/groupB.html.twig') }}
+                {{ include('admin/inc/groupC.html.twig') }}
+                {{ include('admin/inc/groupD.html.twig') }}
+                {{ include('admin/inc/groupE.html.twig') }}
+                {{ include('admin/inc/groupF.html.twig') }}
+                {{ include('admin/inc/groupG.html.twig') }}
+                {{ include('admin/inc/groupH.html.twig') }}
+            </div>
+
+    </main>
+
+{% endblock %}

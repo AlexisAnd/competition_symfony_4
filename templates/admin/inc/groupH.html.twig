@@ -1,0 +1,49 @@
+<h4>Groupe H</h4>
+<div class="row">
+    <div class="col-8">
+        <table class="table w-50">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Equipe</th>
+                <th scope="col">Matchs Joués</th>
+                <th scope="col">Gagné</th>
+                <th scope="col">Match nul</th>
+                <th scope="col">Perdu</th>
+                <th scope="col">Pour</th>
+                <th scope="col">Contre</th>
+                <th scope="col">Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for team in groupH %}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{ team.team }}</td>
+                    <td>{{ team.macthplayed }}</td>
+                    <td>{{ team.win }}</td>
+                    <td>{{ team.draw }}</td>
+                    <td>{{ team.loss }}</td>
+                    <td>{{ team.goalsscored }}</td>
+                    <td>{{ team.goalsconceded }}</td>
+                    <td>{{ team.points }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+        <h4>Matches</h4>
+        <ul>
+            {% for match in matchesH %}
+                {% if match.played == false %}
+                    <li><a href="{{ path('group_add_result',{'id': match.id}) }}">
+                            {{ match.team1 }} - {{ match.team2 }} ce jouera le {{ match.duedate|date('d-m-Y') }}</a></li>
+                {% else %}
+                    <li>{{ match.team1 }} {{ match.scoreteam1 }} - {{ match.scoreteam2 }}{{ match.team2 }} est joué</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<main role="main" class="container w-75">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="mb-5 text-center font-weight-bold">Les groupes</h1>
+            <p class="lead">Ajoutez les matchs des poules et mettez à jour les résultats.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe A</h5>
+                    <a href="{{ path('group_register_A', {'id': competition.id}) }}" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe B</h5>
+                    <a href="#" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe C</h5>
+                    <a href="#" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe D</h5>
+                    <a href="#" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe E</h5>
+                    <a href="#" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe F</h5>
+                    <a href="#" class="btn btn-primary">Configurere</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe G</h5>
+                    <a href="#" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">Groupe H</h5>
+                    <a href="#" class="btn btn-primary">Configurer</a>
+                    <a href="#" class="btn btn-secondary">Detail de la poule</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

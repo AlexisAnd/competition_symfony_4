@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container">
+        <h2>Bienvenue sur Bataille de Pronostics!!</h2>
+
+        <p>Vous souhaitez faire une competition entre collègues pour savoir qui est le meilleur pronostiqueur lors de la prochaine coupe
+                du monde ou coupe d'europe de football? </p>
+        <h3>Ce site est fait pour toi!!</h3>
+        <p>Pour commencer, rien de plus simple! Il suffit de cliquer sur le lien ci dessous pour creer ton compte et suivre les etapes de creation de ta competition</p>
+
+        <a href="{{ path('register_admin') }}">Cliquer ici pour commencer</a>
+</main>
+{% endblock %}

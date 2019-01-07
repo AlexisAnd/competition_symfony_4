@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container">
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <h3>Première étape</h3>
+    <h5>Commencez par créer un compte pour ensuite créer votre compétition</h5>
+
+{{ form_start(form) }}
+
+    {{ form_widget(form) }}
+
+ {{ form_end(form) }}
+</main>
+{% endblock %}

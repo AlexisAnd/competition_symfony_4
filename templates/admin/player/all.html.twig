@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container ">
+    <h2 class="text-center">Les Joueurs</h2>
+    <p>Envoyer une invitation pour que le joueur puisse s'inscrire et créer son profil</p>
+    <a href="{{ path('player_add') }}" class="btn btn-primary">Ajouter</a>
+</main>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container">
+
+    <h3>Associez une équipe à un groupe</h3>
+
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('success') %}
+        <div class="flash-notice alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div>
+            {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+            {{ form_end(form) }}
+    </div>
+</main>
+{% endblock %}

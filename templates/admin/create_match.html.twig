@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main role="main" class="container">
+        <h3>Création des matches</h3>
+        <div>
+            {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+            {{ form_end(form) }}
+        </div>
+    </main>
+
+{% endblock %}

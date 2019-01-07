@@ -1,0 +1,5 @@
+<h1>Bonjour</h1>
+
+<p>Vous avez reçu une invitation pour participer à une compétition.</p>
+<p>Cliquez sur le lien ci dessous pour créer votre profil</p>
+<a href="{{ url('player_register', {'user': user.id , 'competition': competition.id,  'token': token } ) }}">Créer son compte</a>

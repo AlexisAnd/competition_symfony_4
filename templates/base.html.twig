@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+    {% endblock %}
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark p-0">
+    {% if is_granted('ROLE_ADMIN') %}
+    <a class="navbar-brand" href="{{ path('admin_index') }}">Bataille de Pronostics</a>
+    {%  else %}
+    <a class="navbar-brand" href="{{ path('main_index') }}">Bataille de Pronostics</a>
+    {% endif %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+        {% if is_granted('ROLE_ADMIN') %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Competitions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Créer les poules</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+        </ul>
+        {% endif %}
+        {% if is_granted('ROLE_USER') %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+        </ul>
+        {% endif %}
+        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('security_logout') }}">
+        <span class="navbar-text">
+      Se Deconnecter
+        </span></a>
+        {% else %}
+            <a href="{{ path('security_login') }}">
+        <span class="navbar-text">
+      Se connecter
+        </span></a>
+        {% endif %}
+    </div>
+</nav>
+
+
+        {% block body %}
+        {% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('build/js/app.js') }}"></script>
+
+{% endblock %}
+</body>
+</html>

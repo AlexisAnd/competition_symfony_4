@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container w-75">
+    {% if competitions == null %}
+
+        <p>Vous n'avez pas encore crée de compétition. Faites le maintenant en cliquant sur le lien ci dessous:</p>
+        <a href="{{ path('competition_create') }}">Créer une compétition</a>
+
+    {% else %}
+        {% if competFull < 32 %}
+            <h3>Vous devez maintenant créer les groupes de votre compétition</h3>
+            {#<a class="btn btn-primary" href="{{ path('competition_create_groups', {'id': competition.id}) }}">Continuer</a>#}
+        {% else %}
+            <h3>Bravo! Tous les groupes sont crées</h3>
+            <p>Cliquez sur le lien ci dessous pour valider votre compétition</p>
+            <div>
+                {{ form_start(form) }}
+
+                {{ form_widget(form) }}
+
+                {{ form_end(form) }}
+            </div>
+        {% endif %}
+
+        {% for competition in competitions %}
+
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">{{ competition.name }}</th>
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe A</td>
+                        {% for group in teamsGroupA %}
+                            <td><a href="{{ path('competition_edit_group', {'id': group.id}) }}"><i class="fas fa-edit"></i></a>{{ group.team }}</td>
+                        {% endfor %}
+                    {% if teamsGroupA|length < 4 %}
+                        <td><a class="btn btn-primary" href="{{ path('competition_create_groups',
+                                {'id': competition.id}) }}">Ajouter une équipe</a></td>
+                    {% endif %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe B</td>
+                        {% for group in teamsGroupB %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe C</td>
+                        {% for group in teamsGroupC %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe D</td>
+                        {% for group in teamsGroupD %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe E</td>
+                        {% for group in teamsGroupE %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe F</td>
+                        {% for group in teamsGroupF %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe G</td>
+                        {% for group in teamsGroupG %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                <tr>
+                        <td class="font-weight-bold">Groupe H</td>
+                        {% for group in teamsGroupH %}
+                            <td><i class="fas fa-edit"></i>{{ group.team }}</td>
+                        {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+    {% endif %}
+</main>
+{% endblock %}

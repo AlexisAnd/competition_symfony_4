@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container">
+    <h3>Choisir les équipes</h3>
+
+    <p>Puisque votre compétition comporte 32 équipes, Vous avez 8 groupes de 4 équipes à créer</p>
+    <p>Dans un premier temps, selectionnez les équipes qui vont participer à la compétition:</p>
+
+
+        {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+
+        {{ form_end(form) }}
+
+</main>
+{% endblock %}

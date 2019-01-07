@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main role="main" class="container w-75">
+
+    {% if competition %}
+
+    {% if competition.groupscreated == true %}
+
+        <h2 class="mt-5 mb-5 text-center">{{ competition.name }}</h2>
+
+        <div class="row">
+            <div class="col-sm-4 mb-5">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('build/images/groupmatches.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Les poules</h5>
+                        <p class="card-text">Ici vous pouvez voir le detail de chaque poule  et mettre à jour les résultats.</p>
+                        <a href="{{ path('group_all', {'id': competition.id}) }}" class="btn btn-primary">Acceder</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('build/images/matches.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Les Matchs de poules</h5>
+                        <p class="card-text">Ici vous pouvez ajouter les matchs de poules.</p>
+                        <a href="{{ path('matches_groups') }}" class="btn btn-primary">Acceder</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('build/images/players.jpg') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Les joueurs</h5>
+                        <p class="card-text">Ici vous pouvez ajouter ou supprimer un joueur de la competition,
+                            voir le detail des pronostics et le classement général</p>
+                        <a href="{{ path('player_all') }}" class="btn btn-primary">Acceder</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     {% elseif competition.groupscreated ==  false %}
+
+         <h3>Vous devez maintenant ajouter les équipes participantes et leur assigner un groupe</h3>
+         <a class="btn btn-primary" href="{{ path('competition_create_groups', {'id': competition.id}) }}">Continuer</a>
+
+    {% endif %}
+    {% else %}
+
+    <p>Vous n'avez pas encore crée de compétition. Faites le maintenant en cliquant sur le lien ci dessous:</p>
+    <a href="{{ path('competition_create') }}">Créer une compétition</a>
+
+    {% endif %}
+</main>
+{% endblock %}

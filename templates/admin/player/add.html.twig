@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main role="main" class="container ">
+        <h2 class="text-center">Inviter</h2>
+        <p>Rentrez l'adresse email de la personne que vous souhaitez inviter à cette compétition</p>
+
+        <div>
+            {{ form_start(form) }}
+
+            {{ form_widget(form) }}
+
+            {{ form_end(form) }}
+        </div>
+    </main>
+
+{% endblock %}
